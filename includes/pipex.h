@@ -6,7 +6,7 @@
 /*   By: bkrasnos <bkrasnos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 11:42:05 by bkrasnos          #+#    #+#             */
-/*   Updated: 2022/05/10 12:00:36 by bkrasnos         ###   ########.fr       */
+/*   Updated: 2022/05/10 13:19:39 by bkrasnos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 # include <string.h>
 # include <stdio.h>
 # include "../get_next_line/get_next_line.h"
+# include "../libft/libft.h"
 
 # define ERR_INFILE "Infile"
 # define ERR_OUTFILE "Outfile"
