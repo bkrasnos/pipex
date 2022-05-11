@@ -6,12 +6,11 @@
 /*   By: bkrasnos <bkrasnos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 11:38:18 by bkrasnos          #+#    #+#             */
-/*   Updated: 2022/05/11 13:21:20 by bkrasnos         ###   ########.fr       */
+/*   Updated: 2022/05/11 13:25:01 by bkrasnos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "../get_next_line/get_next_line.h"
 
 char	*ft_strdup(const char *str)
 {
