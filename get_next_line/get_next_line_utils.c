@@ -6,7 +6,7 @@
 /*   By: bkrasnos <bkrasnos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 11:56:54 by bkrasnos          #+#    #+#             */
-/*   Updated: 2022/04/28 14:44:46 by bkrasnos         ###   ########.fr       */
+/*   Updated: 2022/05/11 13:14:56 by bkrasnos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ char	*ft_strchr(char *s, int c)
 	return (0);
 }
 
-char	*ft_strjoin(char *str, char *buff)
+char	*ft_strjoin_gnl(char *str, char *buff)
 {
 	size_t	i;
 	size_t	j;

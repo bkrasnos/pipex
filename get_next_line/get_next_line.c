@@ -6,7 +6,7 @@
 /*   By: bkrasnos <bkrasnos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 11:56:31 by bkrasnos          #+#    #+#             */
-/*   Updated: 2022/05/10 11:53:47 by bkrasnos         ###   ########.fr       */
+/*   Updated: 2022/05/11 13:14:53 by bkrasnos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ char	*ft_read_str(int fd, char *str)
 			return (NULL);
 		}
 		buff[read_bytes] = '\0';
-		str = ft_strjoin(str, buff);
+		str = ft_strjoin_gnl(str, buff);
 	}
 	free(buff);
 	return (str);

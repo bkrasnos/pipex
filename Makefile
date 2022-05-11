@@ -6,7 +6,7 @@
 #    By: bkrasnos <bkrasnos@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/10 13:23:46 by bkrasnos          #+#    #+#              #
-#    Updated: 2022/05/11 10:14:11 by bkrasnos         ###   ########.fr        #
+#    Updated: 2022/05/11 12:55:45 by bkrasnos         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,10 +24,10 @@ MPATH_DIR = mandatory/
 MPATH = $(addprefix $(MPATH_DIR), $(MPATH_SRCS))
 OBJ_M = $(MPATH:.c=.o)
 
-BPATH_SRCS = 
-BPATH_DIR = bonus/
-BPATH = $(addprefix $(BPATH_DIR), $(BPATH_SRCS))
-OBJ_B = $(BPATH:.c=.o)
+# BPATH_SRCS = 
+# BPATH_DIR = bonus/
+# BPATH = $(addprefix $(BPATH_DIR), $(BPATH_SRCS))
+# OBJ_B = $(BPATH:.c=.o)
 
 LPATH_SRCS = ft_strncmp.c ft_strdup.c ft_split.c ft_strjoin.c
 LPATH_DIR = libft/
@@ -47,9 +47,9 @@ $(NAME): $(OBJ_M) $(OBJ_L) $(OBJ_GNL)
 
 all:	$(NAME)
 
-bonus:	$(OBJ_B) $(OBJ_L) $(OBJ_GNL)
-		@$(CC) $(OBJ_B) $(OBJ_L) $(OBJ_GNL) -o $(NAME)
-		@echo -e "$(GREEN)$(NAME) created!$(DEFAULT)"
+# bonus:	$(OBJ_B) $(OBJ_L) $(OBJ_GNL)
+# 		@$(CC) $(OBJ_B) $(OBJ_L) $(OBJ_GNL) -o $(NAME)
+# 		@echo -e "$(GREEN)$(NAME) created!$(DEFAULT)"
 	
 clean:
 		@$(RM) $(OBJ_M)

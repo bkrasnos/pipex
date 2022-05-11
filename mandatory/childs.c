@@ -6,13 +6,13 @@
 /*   By: bkrasnos <bkrasnos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 11:24:26 by bkrasnos          #+#    #+#             */
-/*   Updated: 2022/05/11 11:40:18 by bkrasnos         ###   ########.fr       */
+/*   Updated: 2022/05/11 13:03:56 by bkrasnos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/pipex.h"
 
-void	child_free(t_pipex pipex)
+void	child_free(t_pipex *pipex)
 {
 	int	i;
 
