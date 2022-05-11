@@ -6,7 +6,7 @@
 /*   By: bkrasnos <bkrasnos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 12:03:02 by bkrasnos          #+#    #+#             */
-/*   Updated: 2022/05/10 13:24:04 by bkrasnos         ###   ########.fr       */
+/*   Updated: 2022/05/11 11:44:39 by bkrasnos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,24 @@ int	main(int argc, char **argv, char *envp[])
 	t_pipex	pipex;
 	
 	if (argc != 5)
-		return (msg(ERR_INPUT));
-}
+		return (msg(ERR_INPUT))pipex.infile = open(argv[1], O_RDONLY);
+	if (pipex.infile < 0)
+		msg_error(ERR_INFILE);
+	pipex.outfile = open(argv[argc - 1], O_TRUNC | O_CREAT | O_RDWR, 0000644);
+	if (pipex.outfile < 0)
+		msg_error(ERR_OUTFILE);
+	if (pipe(pipex.tube) < 0)
+		msg_error(ERR_PIPE);
+	pipex.paths = find_path(envp);
+	pipex.cmd_paths = ft_split(pipex.paths, ':');
+	pipex.pid1 = fork();
+	if (pipex.pid1 == 0)
+		first_child(pipex, argv, envp);
+	pipex.pid2 = fork();
+	if (pipex.pid2 == 0)
+		second_child(pipex, argv, envp);
+	close_pipes(&pipex);
+	waitpid(pipex.pid1, NULL, 0);
+	waitpid(pipex.pid2, NULL, 0);
+	parent_free(&pipex);
+	return (0);
