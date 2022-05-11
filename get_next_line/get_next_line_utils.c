@@ -6,13 +6,13 @@
 /*   By: bkrasnos <bkrasnos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 11:56:54 by bkrasnos          #+#    #+#             */
-/*   Updated: 2022/05/11 13:14:56 by bkrasnos         ###   ########.fr       */
+/*   Updated: 2022/05/11 13:23:31 by bkrasnos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-size_t	ft_strlen(char *s)
+size_t	ft_strlen_gnl(char *s)
 {
 	size_t	i;
 
@@ -32,7 +32,7 @@ char	*ft_strchr(char *s, int c)
 	if (!s)
 		return (0);
 	if (c == '\0')
-		return ((char *)&s[ft_strlen(s)]);
+		return ((char *)&s[ft_strlen_gnl(s)]);
 	while (s[i] != '\0')
 	{
 		if (s[i] == (char) c)
@@ -55,7 +55,7 @@ char	*ft_strjoin_gnl(char *str, char *buff)
 	}
 	if (!str || !buff)
 		return (NULL);
-	string = malloc(sizeof(char) * ((ft_strlen(str) + ft_strlen(buff)) + 1));
+	string = malloc(sizeof(char) * ((ft_strlen_gnl(str) + ft_strlen_gnl(buff)) + 1));
 	if (string == NULL)
 		return (NULL);
 	i = -1;
@@ -65,7 +65,7 @@ char	*ft_strjoin_gnl(char *str, char *buff)
 			string[i] = str[i];
 	while (buff[j] != '\0')
 		string[i++] = buff[j++];
-	string[ft_strlen(str) + ft_strlen(buff)] = '\0';
+	string[ft_strlen_gnl(str) + ft_strlen_gnl(buff)] = '\0';
 	free(str);
 	return (string);
 }
@@ -112,7 +112,7 @@ char	*ft_new_str(char *str)
 		free(str);
 		return (NULL);
 	}
-	string = (char *)malloc(sizeof(char) * (ft_strlen(str) - i + 1));
+	string = (char *)malloc(sizeof(char) * (ft_strlen_gnl(str) - i + 1));
 	if (!string)
 		return (NULL);
 	i++;

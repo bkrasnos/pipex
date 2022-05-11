@@ -6,7 +6,7 @@
 /*   By: bkrasnos <bkrasnos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 11:42:05 by bkrasnos          #+#    #+#             */
-/*   Updated: 2022/05/11 11:32:34 by bkrasnos         ###   ########.fr       */
+/*   Updated: 2022/05/11 13:16:45 by bkrasnos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,8 @@ typedef struct	s_pipex
 
 void	first(t_pipex pipex, char **argv, char **envp);
 void	second(t_pipex pipex, char **argv, char **envp);
-void	child_free(t_pipex pipex);
-void	parent_free(t_pipex pipex);
+void	child_free(t_pipex *pipex);
+void	parent_free(t_pipex *pipex);
 void	error_message(char *error);
 int		message(char *error);
 
