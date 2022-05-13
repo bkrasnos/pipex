@@ -1,23 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   errors_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bkrasnos <bkrasnos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/11 13:23:58 by bkrasnos          #+#    #+#             */
-/*   Updated: 2022/05/11 13:47:48 by bkrasnos         ###   ########.fr       */
+/*   Created: 2022/05/11 15:31:38 by bkrasnos          #+#    #+#             */
+/*   Updated: 2022/05/11 15:32:41 by bkrasnos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/pipex_bonus.h"
 
-size_t	ft_strlen(const char *str)
+int	message(char *error)
 {
-	size_t	i;
+	write(2, error, ft_strlen(error));
+	return (1);
+}
 
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
+void	message_pipe(char *arg)
+{
+	write(2, ERR_CMD, ft_strlen(ERR_CMD));
+	write(2, arg, ft_strlen(arg));
+	write(2, "\n", 1);
+}
+
+void	error_message(char *error)
+{
+	perror(error);
+	exit (1);
 }

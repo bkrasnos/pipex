@@ -1,23 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   pipex_bonus.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bkrasnos <bkrasnos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/11 13:23:58 by bkrasnos          #+#    #+#             */
-/*   Updated: 2022/05/11 13:47:48 by bkrasnos         ###   ########.fr       */
+/*   Created: 2022/05/11 15:31:42 by bkrasnos          #+#    #+#             */
+/*   Updated: 2022/05/11 15:42:33 by bkrasnos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/pipex_bonus.h"
 
-size_t	ft_strlen(const char *str)
+void	close_pipes(t_pipexb *pipex)
 {
-	size_t	i;
+		int	i;
 
 	i = 0;
-	while (str[i])
+	while (i < (pipex->pipe_nmbs))
+	{
+		close(pipex->pipe[i]);
 		i++;
-	return (i);
+	}
+}
+
+static void		create_pipes(t_pipexb *pipex)
+{
+	int	i;
+
+	i = 0;
+	while (i < pipex->cmd_nmbs - 1)
+	{
+		if (pipe(pipex->pipe + 2 * i) < 0)
+			parent_free(pipex);
+		i++;
+	}
 }

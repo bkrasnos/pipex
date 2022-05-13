@@ -6,7 +6,7 @@
 /*   By: bkrasnos <bkrasnos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 11:56:31 by bkrasnos          #+#    #+#             */
-/*   Updated: 2022/05/11 13:14:53 by bkrasnos         ###   ########.fr       */
+/*   Updated: 2022/05/11 15:54:14 by bkrasnos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,12 +37,12 @@ char	*ft_read_str(int fd, char *str)
 	return (str);
 }
 
-char	*get_next_line(int fd)
+char	*get_next_line(int fd, char **line)
 {
-	char		*line;
+	char		*buff;
 	static char	*str;
 
-	if (fd < 0 || BUFFER_SIZE <= 0)
+	if (fd < 0 || BUFFER_SIZE <= 0 || !line)
 		return (0);
 	str = ft_read_str(fd, str);
 	if (!str)

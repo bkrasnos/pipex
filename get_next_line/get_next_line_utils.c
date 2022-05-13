@@ -6,7 +6,7 @@
 /*   By: bkrasnos <bkrasnos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 11:56:54 by bkrasnos          #+#    #+#             */
-/*   Updated: 2022/05/11 13:23:31 by bkrasnos         ###   ########.fr       */
+/*   Updated: 2022/05/11 13:47:12 by bkrasnos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,8 @@ char	*ft_strjoin_gnl(char *str, char *buff)
 	}
 	if (!str || !buff)
 		return (NULL);
-	string = malloc(sizeof(char) * ((ft_strlen_gnl(str) + ft_strlen_gnl(buff)) + 1));
+	string = malloc(sizeof(char)
+			*((ft_strlen_gnl(str) + ft_strlen_gnl(buff)) + 1));
 	if (string == NULL)
 		return (NULL);
 	i = -1;

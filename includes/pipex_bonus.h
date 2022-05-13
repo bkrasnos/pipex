@@ -6,7 +6,7 @@
 /*   By: bkrasnos <bkrasnos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 11:36:22 by bkrasnos          #+#    #+#             */
-/*   Updated: 2022/05/11 11:38:06 by bkrasnos         ###   ########.fr       */
+/*   Updated: 2022/05/11 15:55:59 by bkrasnos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,22 +32,32 @@
 # define ERR_ENVP "Environment"
 # define ERR_HEREDOC "here_doc"
 
-typedef struct	s_pipex
+typedef struct s_pipexb
 {
-	pid_t	pid1;
-	pid_t	pid2;
-	int		tube[2];
+	pid_t	pid;
+	int		*pipe;
+	int		here_doc;
+	int		cmd_nmbs;
+	int		pipe_nmbs;
+	int		idx;
 	int		infile;
 	int		outfile;
-	char	*paths;
+	char	*env_path;
 	char	**cmd_paths;
 	char	**cmd_args;
 	char	*cmd;
-}	t_pipex;
+}	t_pipexb;
 
-void	child_free(t_pipex pipex);
-void	parent_free(t_pipex pipex);
-void	error_message(char *error);
-int		message(char *error);
+void			child_free(t_pipexb pipex);
+void			message_pipe(char *arg);
+void			error_message(char *error);
+int				message(char *error);
+void			parent_free(t_pipexb *pipex);
+void			pipe_free(t_pipexb *pipex);
+void			close_pipes(t_pipexb *pipex);
+void			here_doc(char *argv, t_pipexb *pipex);
+int				args_in(char *arg, t_pipexb *pipex);
+void			close_pipes(t_pipexb *pipex);
+static void		create_pipes(t_pipexb *pipex);
 
 #endif

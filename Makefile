@@ -6,7 +6,7 @@
 #    By: bkrasnos <bkrasnos@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/10 13:23:46 by bkrasnos          #+#    #+#              #
-#    Updated: 2022/05/11 12:55:45 by bkrasnos         ###   ########.fr        #
+#    Updated: 2022/05/11 13:45:30 by bkrasnos         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,10 +24,10 @@ MPATH_DIR = mandatory/
 MPATH = $(addprefix $(MPATH_DIR), $(MPATH_SRCS))
 OBJ_M = $(MPATH:.c=.o)
 
-# BPATH_SRCS = 
-# BPATH_DIR = bonus/
-# BPATH = $(addprefix $(BPATH_DIR), $(BPATH_SRCS))
-# OBJ_B = $(BPATH:.c=.o)
+BPATH_SRCS = 
+BPATH_DIR = bonus/
+BPATH = $(addprefix $(BPATH_DIR), $(BPATH_SRCS))
+OBJ_B = $(BPATH:.c=.o)
 
 LPATH_SRCS = ft_strncmp.c ft_strdup.c ft_split.c ft_strjoin.c
 LPATH_DIR = libft/
@@ -43,24 +43,24 @@ OBJ_GNL = $(GNLPATH:.c=.o)
 		@${CC} ${FLAGS} -c $< -o $@
 $(NAME): $(OBJ_M) $(OBJ_L) $(OBJ_GNL)
 		@$(CC) $(OBJ_M) $(OBJ_L) $(OBJ_GNL) -o $(NAME)
-		@echo -e "$(GREEN)$(NAME) created!$(DEFAULT)"
+		@echo "$(GREEN)$(NAME) created!$(DEFAULT)"
 
 all:	$(NAME)
 
-# bonus:	$(OBJ_B) $(OBJ_L) $(OBJ_GNL)
-# 		@$(CC) $(OBJ_B) $(OBJ_L) $(OBJ_GNL) -o $(NAME)
-# 		@echo -e "$(GREEN)$(NAME) created!$(DEFAULT)"
+bonus:	$(OBJ_B) $(OBJ_L) $(OBJ_GNL)
+		@$(CC) $(OBJ_B) $(OBJ_L) $(OBJ_GNL) -o $(NAME)
+		@echo "$(GREEN)$(NAME) created!$(DEFAULT)"
 	
 clean:
 		@$(RM) $(OBJ_M)
-		@$(RM) $(OBJ_B)
+		# @$(RM) $(OBJ_B)
 		@$(RM) $(OBJ_GNL)
 		@$(RM) $(OBJ_L)
-		@echo -e "$(YELLOW)object files deleted!$(DEFAULT)"
+		@echo "$(YELLOW)object files deleted!$(DEFAULT)"
 
 fclean:	clean
 		@$(RM) $(NAME)
-		@echo -e "$(RED)all deleted!$(DEFAULT)"
+		@echo "$(RED)all deleted!$(DEFAULT)"
 
 re:	fclean all
 

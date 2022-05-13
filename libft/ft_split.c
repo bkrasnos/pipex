@@ -6,7 +6,7 @@
 /*   By: bkrasnos <bkrasnos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 11:37:52 by bkrasnos          #+#    #+#             */
-/*   Updated: 2022/04/15 10:12:49 by bkrasnos         ###   ########.fr       */
+/*   Updated: 2022/05/11 13:27:03 by bkrasnos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,25 +96,3 @@ char	**ft_split(char const *s, char c)
 	spl = fill(s, spl, c, words);
 	return (spl);
 }
-
-// int	main(void)
-// {
-// 	// char	s[] = "dfdfgk";
-// 	char	s[] = "klgvjknvzdgob odi f ";
-// 	// char	s[] = "gg";
-// 	char	c;
-// 	char	**spl;
-// 	int		i;
-
-// 	c = 'a';
-// 	ret = ft_split(s, c);
-// 	i = 0;
-// 	while (spl[i])
-// 	{
-// 		printf("str[%d] is '%s'\n", i, spl[i]);
-// 		++i;
-// 	}
-// 	printf("Amount of strings is %d\n", i);
-// 	free(spl);
-// 	return (0);
-// }

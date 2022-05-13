@@ -6,7 +6,7 @@
 /*   By: bkrasnos <bkrasnos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 12:03:02 by bkrasnos          #+#    #+#             */
-/*   Updated: 2022/05/11 13:14:52 by bkrasnos         ###   ########.fr       */
+/*   Updated: 2022/05/11 13:48:36 by bkrasnos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	close_pipe(t_pipex *pipex)
 int	main(int argc, char **argv, char *envp[])
 {
 	t_pipex	pipex;
-	
+
 	if (argc != 5)
 		return (message(ERR_INPUT));
 	pipex.infile = open(argv[1], O_RDONLY);

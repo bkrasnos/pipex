@@ -6,7 +6,7 @@
 /*   By: bkrasnos <bkrasnos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 11:42:05 by bkrasnos          #+#    #+#             */
-/*   Updated: 2022/05/11 13:16:45 by bkrasnos         ###   ########.fr       */
+/*   Updated: 2022/05/11 13:47:27 by bkrasnos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@
 # define ERR_PIPE "Pipe"
 # define ERR_CMD "Command not found\n"
 
-typedef struct	s_pipex
+typedef struct s_pipex
 {
 	pid_t	pid1;
 	pid_t	pid2;
