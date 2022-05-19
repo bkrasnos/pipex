@@ -6,7 +6,7 @@
 /*   By: bkrasnos <bkrasnos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 11:56:54 by bkrasnos          #+#    #+#             */
-/*   Updated: 2022/05/11 13:47:12 by bkrasnos         ###   ########.fr       */
+/*   Updated: 2022/05/19 11:41:16 by bkrasnos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,20 +24,16 @@ size_t	ft_strlen_gnl(char *s)
 	return (i);
 }
 
-char	*ft_strchr(char *s, int c)
+int	find_newline(char *str)
 {
-	int	i;
-
-	i = 0;
-	if (!s)
-		return (0);
-	if (c == '\0')
-		return ((char *)&s[ft_strlen_gnl(s)]);
-	while (s[i] != '\0')
+	if (str)
 	{
-		if (s[i] == (char) c)
-			return ((char *)&s[i]);
-		i++;
+		while (*str)
+		{
+			if (*str == '\n')
+				return (1);
+			str++;
+		}
 	}
 	return (0);
 }
@@ -73,54 +69,51 @@ char	*ft_strjoin_gnl(char *str, char *buff)
 
 char	*ft_get_line(char *str)
 {
-	int		i;
-	char	*string;
+	size_t		i;
+	size_t		j;
+	char		*string;
 
 	i = 0;
-	if (!str[i])
+	j = 0;
+	if (!str)
 		return (NULL);
-	while (str[i] && str[i] != '\n')
+	while (str[i] != '\0' && str[i] != '\n')
 		i++;
-	string = (char *)malloc(sizeof(char) * (i + 2));
+	string = (char *)malloc(i + 1);
 	if (!string)
 		return (NULL);
 	i = 0;
-	while (str[i] && str[i] != '\n')
+	while (str[j] != '\0' && str[j] != '\n')
 	{
-		string[i] = str[i];
-		i++;
+		string[j] = str[j];
+		j++;
 	}
-	if (str[i] == '\n')
-	{
-		string[i] = str[i];
-		i++;
-	}
-	string[i] = '\0';
+	string[j] = '\0';
 	return (string);
 }
 
-char	*ft_new_str(char *str)
+char	*ft_trim(char *str)
 {
-	int		i;
-	int		j;
-	char	*string;
+	size_t	i;
+	size_t	j;
 
 	i = 0;
-	while (str[i] && str[i] != '\n')
+	j = 0;
+	if (!str)
+		return (NULL);
+	while (str[i] != '\n' && str[i] != '\0')
 		i++;
-	if (!str[i])
+	if (str[i] == '\0')
 	{
 		free(str);
 		return (NULL);
 	}
-	string = (char *)malloc(sizeof(char) * (ft_strlen_gnl(str) - i + 1));
-	if (!string)
-		return (NULL);
 	i++;
-	j = 0;
-	while (str[i])
-		string[j++] = str[i++];
-	string[j] = '\0';
-	free(str);
-	return (string);
+	while (str[i + j])
+	{
+		str[j] = str[i + j];
+		j++;
+	}
+	str[j] = '\0';
+	return (str);
 }
