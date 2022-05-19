@@ -6,12 +6,11 @@
 /*   By: bkrasnos <bkrasnos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 15:44:59 by bkrasnos          #+#    #+#             */
-/*   Updated: 2022/05/11 15:51:33 by bkrasnos         ###   ########.fr       */
+/*   Updated: 2022/05/19 13:33:47 by bkrasnos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/pipex_bonus.h"
-
 
 void	here_doc(char *argv, t_pipexb *pipex)
 {

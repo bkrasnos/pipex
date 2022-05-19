@@ -6,7 +6,7 @@
 /*   By: bkrasnos <bkrasnos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 15:31:42 by bkrasnos          #+#    #+#             */
-/*   Updated: 2022/05/11 15:42:33 by bkrasnos         ###   ########.fr       */
+/*   Updated: 2022/05/19 13:34:12 by bkrasnos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	close_pipes(t_pipexb *pipex)
 {
-		int	i;
+	int	i;
 
 	i = 0;
 	while (i < (pipex->pipe_nmbs))
@@ -24,7 +24,7 @@ void	close_pipes(t_pipexb *pipex)
 	}
 }
 
-static void		create_pipes(t_pipexb *pipex)
+static void	create_pipes(t_pipexb *pipex)
 {
 	int	i;
 

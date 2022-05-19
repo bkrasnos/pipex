@@ -6,7 +6,7 @@
 /*   By: bkrasnos <bkrasnos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 11:56:31 by bkrasnos          #+#    #+#             */
-/*   Updated: 2022/05/19 11:36:25 by bkrasnos         ###   ########.fr       */
+/*   Updated: 2022/05/19 13:32:44 by bkrasnos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	ft_error(char *str)
 	return (-1);
 }
 
-char	*get_next_line(int fd, char **line)
+char	get_next_line(int fd, char **line)
 {
 	int			read_bytes;
 	char		*buff;
@@ -38,7 +38,7 @@ char	*get_next_line(int fd, char **line)
 		if (read_bytes < 0)
 			return (ft_error(buff));
 			buff[read_bytes] = '\0';
-			str = str_join(str, buff);
+			str = ft_strjoin_gnl(str, buff);
 	}
 	free(buff);
 	*line = ft_get_line(str);

@@ -6,7 +6,7 @@
 /*   By: bkrasnos <bkrasnos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 11:52:37 by bkrasnos          #+#    #+#             */
-/*   Updated: 2022/05/11 13:22:30 by bkrasnos         ###   ########.fr       */
+/*   Updated: 2022/05/19 13:32:58 by bkrasnos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,19 @@
 
 # include <stdlib.h>
 # include <unistd.h>
-# include <limits.h>
+# include <sys/types.h>
+# include <sys/uio.h>
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 
 # endif
 
 size_t	ft_strlen_gnl(char *s);
-char	*get_next_line(int fd);
-char	*ft_new_str(char *str);
-char	*ft_read_str(int fd, char *str);
-char	*ft_strchr(char *s, int c);
+char	get_next_line(int fd, char **line);
 char	*ft_get_line(char *str);
 char	*ft_strjoin_gnl(char *str, char *buff);
+int		find_newline(char *str);
+char	*ft_trim(char *str);
+int		error(char *str);
 
 #endif
