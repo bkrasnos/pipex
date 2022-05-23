@@ -6,7 +6,7 @@
 /*   By: bkrasnos <bkrasnos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 11:24:26 by bkrasnos          #+#    #+#             */
-/*   Updated: 2022/05/23 10:24:18 by bkrasnos         ###   ########.fr       */
+/*   Updated: 2022/05/23 11:18:22 by bkrasnos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ static char	*get_cmd(char **paths, char *cmd)
 	}
 	return (NULL);
 }
-
 
 void	child_free(t_pipex *pipex)
 {

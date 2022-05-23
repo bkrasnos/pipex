@@ -6,7 +6,7 @@
 /*   By: bkrasnos <bkrasnos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 11:56:31 by bkrasnos          #+#    #+#             */
-/*   Updated: 2022/05/23 09:37:24 by bkrasnos         ###   ########.fr       */
+/*   Updated: 2022/05/23 11:18:55 by bkrasnos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,22 +49,3 @@ int	get_next_line(int fd, char **line)
 		return (0);
 	return (read_bytes);
 }
-
-
-// int	main(void)
-// {
-// 	char	*line;
-// 	int		i;
-// 	int		fd;
-// 	fd = open("test.txt", O_RDONLY);
-
-// 	i = 1;
-// 	while (i < 5)
-// 	{
-// 		get_next_line(fd, &line);
-// 		printf("\nline %2d: %s", i, line);
-// 		i++;
-// 	}
-// 	close(fd);
-// 	return (0);
-// }

@@ -6,7 +6,7 @@
 #    By: bkrasnos <bkrasnos@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/10 13:23:46 by bkrasnos          #+#    #+#              #
-#    Updated: 2022/05/23 10:25:53 by bkrasnos         ###   ########.fr        #
+#    Updated: 2022/05/23 11:32:02 by bkrasnos         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,8 @@ MPATH_DIR = mandatory/
 MPATH = $(addprefix $(MPATH_DIR), $(MPATH_SRCS))
 OBJ_M = $(MPATH:.c=.o)
 
-BPATH_SRCS = errors_bonus.c free_bonus.c here_doc_bonus.c pipex_bonus.c
+BPATH_SRCS = errors_bonus.c free_bonus.c here_doc_bonus.c\
+					 pipex_bonus.c childs_bonus.c file_bonus.c
 BPATH_DIR = bonus/
 BPATH = $(addprefix $(BPATH_DIR), $(BPATH_SRCS))
 OBJ_B = $(BPATH:.c=.o)

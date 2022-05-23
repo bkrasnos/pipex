@@ -6,7 +6,7 @@
 /*   By: bkrasnos <bkrasnos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 15:31:40 by bkrasnos          #+#    #+#             */
-/*   Updated: 2022/05/19 13:33:34 by bkrasnos         ###   ########.fr       */
+/*   Updated: 2022/05/23 11:28:52 by bkrasnos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,6 @@ void	pipe_free(t_pipexb *pipex)
 	if (pipex->here_doc)
 		unlink(".heredoc_tmp");
 	free(pipex->pipe);
-	msg(ERR_ENVP);
+	message(ERR_ENVP);
 	exit(1);
 }

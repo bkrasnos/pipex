@@ -6,7 +6,7 @@
 /*   By: bkrasnos <bkrasnos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 15:44:59 by bkrasnos          #+#    #+#             */
-/*   Updated: 2022/05/19 13:33:47 by bkrasnos         ###   ########.fr       */
+/*   Updated: 2022/05/23 11:34:29 by bkrasnos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	here_doc(char *argv, t_pipexb *pipex)
 	if (pipex->infile < 0)
 	{
 		unlink(".heredoc_tmp");
-		msg_error(ERR_HEREDOC);
+		error_message(ERR_HEREDOC);
 	}
 }
 
