@@ -6,7 +6,7 @@
 #    By: bkrasnos <bkrasnos@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/10 13:23:46 by bkrasnos          #+#    #+#              #
-#    Updated: 2022/05/19 13:31:57 by bkrasnos         ###   ########.fr        #
+#    Updated: 2022/05/23 10:25:53 by bkrasnos         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,17 +19,17 @@ HEADER_SRCS = pipex.h pipex_bonus.h
 HEADER_DIR = includes/
 HEADER = $(addprefix $(HEADER_DIR), $(HEADER_SRCS))
 
-MPATH_SRCS = pipex.c
+MPATH_SRCS = pipex.c childs.c errors.c parents.c
 MPATH_DIR = mandatory/
 MPATH = $(addprefix $(MPATH_DIR), $(MPATH_SRCS))
 OBJ_M = $(MPATH:.c=.o)
 
-BPATH_SRCS = 
+BPATH_SRCS = errors_bonus.c free_bonus.c here_doc_bonus.c pipex_bonus.c
 BPATH_DIR = bonus/
 BPATH = $(addprefix $(BPATH_DIR), $(BPATH_SRCS))
 OBJ_B = $(BPATH:.c=.o)
 
-LPATH_SRCS = ft_strncmp.c ft_strdup.c ft_split.c ft_strjoin.c
+LPATH_SRCS = ft_strncmp.c ft_strdup.c ft_split.c ft_strjoin.c ft_strlen.c
 LPATH_DIR = libft/
 LPATH = $(addprefix $(LPATH_DIR), $(LPATH_SRCS))
 OBJ_L = $(LPATH:.c=.o)
