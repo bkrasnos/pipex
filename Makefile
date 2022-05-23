@@ -6,7 +6,7 @@
 #    By: bkrasnos <bkrasnos@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/10 13:23:46 by bkrasnos          #+#    #+#              #
-#    Updated: 2022/05/23 11:32:02 by bkrasnos         ###   ########.fr        #
+#    Updated: 2022/05/23 11:43:32 by bkrasnos         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,6 +42,7 @@ OBJ_GNL = $(GNLPATH:.c=.o)
 
 %.o: %.c $(HEADER) Makefile
 		@${CC} ${FLAGS} -c $< -o $@
+
 $(NAME): $(OBJ_M) $(OBJ_L) $(OBJ_GNL)
 		@$(CC) $(OBJ_M) $(OBJ_L) $(OBJ_GNL) -o $(NAME)
 		@echo "$(GREEN)$(NAME) created!$(DEFAULT)"
@@ -54,7 +55,7 @@ bonus:	$(OBJ_B) $(OBJ_L) $(OBJ_GNL)
 	
 clean:
 		@$(RM) $(OBJ_M)
-		# @$(RM) $(OBJ_B)
+		@$(RM) $(OBJ_B)
 		@$(RM) $(OBJ_GNL)
 		@$(RM) $(OBJ_L)
 		@echo "$(YELLOW)object files deleted!$(DEFAULT)"
