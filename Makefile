@@ -6,13 +6,13 @@
 #    By: bkrasnos <bkrasnos@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/10 13:23:46 by bkrasnos          #+#    #+#              #
-#    Updated: 2022/05/27 09:28:49 by bkrasnos         ###   ########.fr        #
+#    Updated: 2022/05/27 10:48:22 by bkrasnos         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = pipex
 CC = gcc
-FLAGS = -Wall -Wextra -Werror -g
+FLAGS = -Wall -Wextra -Werror
 RM = rm -rf
 
 HEADER_SRCS = pipex.h pipex_bonus.h
