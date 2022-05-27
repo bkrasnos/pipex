@@ -6,7 +6,7 @@
 /*   By: bkrasnos <bkrasnos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 11:24:26 by bkrasnos          #+#    #+#             */
-/*   Updated: 2022/05/23 11:18:22 by bkrasnos         ###   ########.fr       */
+/*   Updated: 2022/05/27 10:47:18 by bkrasnos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ void	second(t_pipex pipex, char **argv, char **envp)
 	{
 		child_free(&pipex);
 		message(ERR_CMD);
-		exit(1);
+		exit(127);
 	}
 	execve(pipex.cmd, pipex.cmd_args, envp);
 }
